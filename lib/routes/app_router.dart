@@ -1,6 +1,6 @@
+import 'package:c_clark_workshop/features/splash/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import '../core/constants/constants.dart';
-import '../core/extensions/context_extensions.dart';
 import 'app_routes.dart';
 
 class AppRouter {
@@ -9,16 +9,16 @@ class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.initial:
-        return _buildRoute(settings, const _RouteNotFoundScreen());
+        return _buildRoute(settings, const SplashScreen());
       default:
         return _buildRoute(settings, const _RouteNotFoundScreen());
     }
   }
 
   static MaterialPageRoute<dynamic> _buildRoute(
-    RouteSettings settings,
-    Widget page,
-  ) {
+      RouteSettings settings,
+      Widget page,
+      ) {
     return MaterialPageRoute<dynamic>(settings: settings, builder: (_) => page);
   }
 }
